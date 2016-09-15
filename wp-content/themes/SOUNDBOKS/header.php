@@ -38,13 +38,8 @@
                 </a>
               </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <?php wp_nav_menu( array( 'menu_class'      => 'menu nav navbar-nav','theme_location' => 'primary', 'menu_id' => 'site-navigation' ) ); ?>
-<!--              <ul class="" id="" role="navigation">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li> 
-                <li><a href="#">Page 3</a></li> 
-              </ul>-->
+                    <?php wp_nav_menu( array( 'menu_class'      => 'menu nav navbar-nav pull-right','theme_location' => 'primary', 'menu_id' => 'site-navigation' ) ); ?>
+          
                 </div>
             </div>
           </nav>

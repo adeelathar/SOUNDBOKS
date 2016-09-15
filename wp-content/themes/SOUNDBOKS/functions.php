@@ -102,8 +102,10 @@ add_action( 'widgets_init', 'soundboks_widgets_init' );
  * Enqueue scripts and styles.
  */
 function soundboks_scripts() {
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/frameworks/bootstrap/css/bootstrap.min.css' );
-	wp_enqueue_style( 'soundboks-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'style1', get_template_directory_uri() . '/assets/frameworks/bootstrap/css/bootstrap.min.css' );
+        	wp_enqueue_style( 'style2', get_stylesheet_uri() );
+
+        wp_enqueue_style( 'style3', get_template_directory_uri() . '/assets/css/custom.css' );
 
 	wp_enqueue_script( 'soundboks-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
         
