@@ -13,3 +13,65 @@ body
   line-height: 1.13;
   color: #000000;
 }
+
+.navbar-brand 
+{
+    height:80px;
+}
+
+#navbar
+{
+    padding:0px;
+}
+
+.navbar  .countries li:first-child
+{
+    position:relative;
+}
+.navbar  .countries li:first-child:after
+{
+    border-right:1px solid rgba(151, 151, 151, 0.2);
+    content:" ";
+    display:block;
+    position:absolute;
+    right:0px;
+    height:27px; width:3px;
+    top:50%;
+    transform:translateY(-50%);
+}
+.navbar-nav>li>a
+{
+    line-height:80px;
+    padding-top:0px;
+    padding-bottom:0px;
+    font-size:17.9px;
+    font-weight:bold;
+    color:#000000;
+}
+
+.navbar-nav>li.current_page_item>a, .navbar-nav>li.active>a
+{
+    color:#f47c60;
+}
+
+.navbar-nav>li.cart_icon>a
+{
+    color:#000000;
+}
+.navbar-nav>li.cart_icon>a i
+{
+    position: relative;
+}
+.navbar-nav>li.cart_icon>a i .circle
+{
+        content: " ";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #f47c60;
+    top: -2px;
+    left: 6px;
+    position: absolute;
+    
+}
