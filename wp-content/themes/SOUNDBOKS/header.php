@@ -38,22 +38,19 @@
                 </a>
               </div>
                 <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav" id="site-navigation" role="navigation">
+                    <?php wp_nav_menu( array( 'menu_class'      => 'menu nav navbar-nav','theme_location' => 'primary', 'menu_id' => 'site-navigation' ) ); ?>
+<!--              <ul class="" id="" role="navigation">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Page 1</a></li>
                 <li><a href="#">Page 2</a></li> 
                 <li><a href="#">Page 3</a></li> 
-              </ul>
+              </ul>-->
                 </div>
             </div>
           </nav>
             
 		
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'soundboks' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
 
 
 	<div id="content" class="site-content">
