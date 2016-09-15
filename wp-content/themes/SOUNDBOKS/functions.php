@@ -145,3 +145,34 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+
+
+function get_applied_coupons()  // this is the action data variable we set in ajax
+{
+   
+    foreach(WC()->cart->get_coupons() as $applied_coupon):  
+        if ( $post = get_post( $applied_coupon->id ) ) 
+        {
+            if ( !empty( $post->post_excerpt ) ) 
+            {
+                ?>
+                <div class="applied_coupon" id='coupon_<?php echo $coupon->id; ?>'>
+                    <strong><?php echo  $applied_coupon->code; ?>: </strong>
+                        <?php echo $post->post_excerpt ; ?>
+                </div>
+                 <?php
+            }
+                                                    
+        }
+                                                        
+    endforeach;
+           wp_die();                                         
+}
+ 
+// in first parameter prefix function name with wp_ajax_ 
+// this action is required in order to recieve data sent from ajax 
+add_action('wp_ajax_get_applied_coupons', 'get_applied_coupons');
+ 

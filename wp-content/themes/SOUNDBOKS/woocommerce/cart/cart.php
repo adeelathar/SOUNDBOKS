@@ -15,84 +15,84 @@
  * @package WooCommerce/Templates
  * @version 2.3.8
  */
-
+     
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+    
 wc_print_notices();
-
+    
 do_action( 'woocommerce_before_cart' ); ?>
-
+    
 <form action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
-
+    
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
-
-<table class="shop_table shop_table_responsive cart" cellspacing="0">
-	<thead>
-		<tr>
-			<th class="product-thumbnail">&nbsp;</th>
-			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-			<th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-			<th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
-                        <th class="product-remove">&nbsp;</th>
-
-		</tr>
-	</thead>
-	<tbody>
+    
+    <table class="shop_table shop_table_responsive cart" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="product-thumbnail">&nbsp;</th>
+                <th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
+                <th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
+                <th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
+                <th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
+                <th class="product-remove">&nbsp;</th>
+                    
+            </tr>
+        </thead>
+        <tbody>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
-
+                    
 		<?php
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 			$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-
+                            
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
-				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-
-					
-					<td class="product-thumbnail">
+            <tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+                
+                
+                <td class="product-thumbnail">
 						<?php
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-
+                                                            
 							if ( ! $product_permalink ) {
 								echo $thumbnail;
 							} else {
 								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
 							}
 						?>
-					</td>
-
-					<td class="product-name" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
+                </td>
+                    
+                <td class="product-name" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
 						<?php
 							if ( ! $product_permalink ) {
 								echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
 							} else {
 								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_title() ), $cart_item, $cart_item_key );
 							}
-
+                                                            
 							// Meta data
 							echo WC()->cart->get_item_data( $cart_item );
-
+                                                            
 							// Backorder notification
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
 								echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
 							}
 						?>
-                                            <br>
+                    <br>
                                             <?php echo $_product->post->post_excerpt;; ?>
-					</td>
-
-					<td class="product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
+                </td>
+                    
+                <td class="product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 						?>
-					</td>
-
-					<td class="product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
+                </td>
+                    
+                <td class="product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
 						<?php
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -104,18 +104,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 									'min_value'   => '0'
 								), $_product, false );
 							}
-
+                                                            
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
 						?>
-					</td>
-
-					<td class="product-subtotal" data-title="<?php _e( 'Total', 'woocommerce' ); ?>">
+                </td>
+                    
+                <td class="product-subtotal" data-title="<?php _e( 'Total', 'woocommerce' ); ?>">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 						?>
-					</td>
-                                        
-                                        <td class="product-remove">
+                </td>
+                    
+                <td class="product-remove">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
@@ -125,69 +125,97 @@ do_action( 'woocommerce_before_cart' ); ?>
 								esc_attr( $_product->get_sku() )
 							), $cart_item_key );
 						?>
-					</td>
-
-				</tr>
+                </td>
+                    
+            </tr>
 				<?php
 			}
 		}
-
+                    
 		do_action( 'woocommerce_cart_contents' );
-                echo 'coupons: ';
-                print_r(WC()->cart->get_coupons());
                 
 		?>
-                                
-		<tr>
-			<td colspan="6" class="actions">
-
+                    
+            <tr>
+                <td colspan="6" class="actions">
+                    
 				<?php if ( wc_coupons_enabled() ) { ?>
-					<div class="coupon">
-
-						<label for="coupon_code"><?php _e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
-                                                <!-- List of coupons -->
-                                                <div style="clear:both"></div>
-                                                <div id="applied_coupons">
+                    <div class="coupon">
+                        
+                        <label for="coupon_code"><?php _e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
+                        
+                        
+                        <!-- ############### LIST OF APPLIED COUPONS ################# -->
+                        <div style="clear:both"></div>
+                        
+                        <div id="applied_coupons">
                                                     <?php foreach(WC()->cart->get_coupons() as $applied_coupon):  if ( $post = get_post( $applied_coupon->id ) ) {
                         if ( !empty( $post->post_excerpt ) ) {
                                                         ?>
-                                                    <div class="applied_coupon" id='coupon_<?php echo $coupon->id; ?>'><strong><?php echo  $applied_coupon->code; ?>: </strong><?php echo $post->post_excerpt ; ?></div>
+                            <div class="applied_coupon" id='coupon_<?php echo $coupon->id; ?>'><strong><?php echo  $applied_coupon->code; ?>: </strong><?php echo $post->post_excerpt ; ?></div>
                                                     <?php
                                                     }}
                                                         
                                                     endforeach;
                                                     ?>
-                                                </div>
-
+                        </div>
+                     <!-- #################### END LIST OF APPLIED COUPONS ############## --> 
+                     
+                     
+                     
 						<?php do_action( 'woocommerce_cart_coupon' ); ?>
-					</div>
+                    </div>
 				<?php } ?>
-
-				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
-
+                                    
+                    <input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+                        
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
-
+                                    
 				<?php wp_nonce_field( 'woocommerce-cart' ); ?>
-			</td>
-		</tr>
-
+                </td>
+            </tr>
+                
 		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-	</tbody>
-</table>
-
+        </tbody>
+    </table>
+        
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
-
+    
 </form>
-
+    
 <div class="cart-collaterals">
-
+    
 	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
-
+            
 </div>
-
+    
 <?php do_action( 'woocommerce_after_cart' ); ?>
 <script>
-    jQuery( document.body ).on( 'applied_coupon', function(){
-        alert('created coupon');
-    });                         
-   </script>
+    jQuery( document.body ).on( 'applied_coupon removed_coupon', function(e){
+        // get applied coupons
+        get_applied_coupons();
+    });
+    
+    function get_applied_coupons()
+    {
+        
+        // Action will be function name which we will create in functions.php
+        var action      = "get_applied_coupons"; 
+        // this is required url for ajax calls in the wordpress
+        var ajax_url    = '<?php echo admin_url('admin-ajax.php'); ?>';
+        
+        var data        = {action:action};
+        
+        jQuery.ajax({
+            url:ajax_url,
+            type:"POST",
+            data:data
+        }).done(function(response){
+            console.log(response);
+           var coupons_html = "";
+           var coupons = response.data;
+          jQuery("#applied_coupons").html(response);
+        });
+        return false;
+    }
+</script>
