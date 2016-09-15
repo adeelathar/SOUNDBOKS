@@ -26,7 +26,10 @@ do_action( 'woocommerce_before_cart' ); ?>
     
 <form action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
     
-<?php do_action( 'woocommerce_before_cart_table' ); ?>
+<?php do_action( 'woocommerce_before_cart_table' ); 
+
+
+?>
     
     <table class="shop_table shop_table_responsive cart" cellspacing="0">
         <thead>
@@ -83,7 +86,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 							}
 						?>
                     <br>
-                                            <?php echo $_product->post->post_excerpt;; ?>
+                                            <?php echo $_product->post->post_excerpt;; ?><br><br>
+                                            Shipping: <?php  $delivery_estimate = $_product->get_attribute( 'Delivery Estimate' ); echo $delivery_estimate; ?>
                 </td>
                     
                 <td class="product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
@@ -130,10 +134,13 @@ do_action( 'woocommerce_before_cart' ); ?>
             </tr>
 				<?php
 			}
+                        do_action( 'woocommerce_cart_contents' );
+                
+
+
 		}
                     
-		do_action( 'woocommerce_cart_contents' );
-                
+		
 		?>
                     
             <tr>
