@@ -14,6 +14,11 @@ body
   color: #000000;
 }
 
+*, body *, input
+{
+    font-family:conduit;
+}
+
 .navbar-brand 
 {
     height:80px;
@@ -85,6 +90,7 @@ body
     font-size:18px;
     padding-bottom:87px; font-weight:bold; 
     margin-top:30px;
+    margin-bottom:15px;
 }
 #cart_icons_row i
 {
@@ -132,6 +138,10 @@ body
 .woocommerce table.shop_table, .woocommerce table.shop_table td
 {
     border:0px; border-bottom:1px dotted rgba(0, 0, 0, 0.32);
+}
+.woocommerce table.shop_table, .woocommerce table.shop_table tbody tr:nth-last-child(2) td
+{
+    border:0px;
 }
 .woocommerce .amount
 {
@@ -187,4 +197,61 @@ body
 {
     font-size:16px; font-weight:bold;
     border:0px; outline:none; width:100%;
+}
+
+
+#coupon_form
+{
+    margin-top:30px;
+    
+}
+#coupon_form input[type=text]
+{
+      border: 1px solid #dddddd;
+    width: 188px;
+    height: 60px;
+    line-height: 60px;
+    color: #dddddd;
+    border-radius: 0px;
+    float: left;
+    margin: 0px;
+    border-right: 0px;
+    padding: 20px;
+    font-family: conduit;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#coupon_form input[type=submit]
+{
+    border:1px solid #d8d8d8;
+        width: 188px;font-family: conduit;
+    height: 60px;
+    color: #fff;
+    border-radius: 0px;
+    margin: 0px;
+    line-height: 60px; font-size: 20px;
+    padding: 0px;
+    
+}
+#coupon_form input[type=submit]:hover
+{
+    background-image:none; background:#b3b2b2; background-color:#b3b2b2; box-shadow:none;
+}
+
+#applied_coupons
+{
+    width:390px;
+    line-height:18px;
+    font-size:16px;
+    margin-top:20px;
+}
+#applied_coupons .glyphicon
+{
+    font-size:25px;
+}
+
+#applied_coupons .applied_coupon
+{
+    margin-bottom:10px;
 }

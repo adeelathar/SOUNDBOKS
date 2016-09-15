@@ -154,23 +154,27 @@ require get_template_directory() . '/inc/jetpack.php';
 
 function get_applied_coupons()  // this is the action data variable we set in ajax
 {
-   
-    foreach(WC()->cart->get_coupons() as $applied_coupon):  
-        if ( $post = get_post( $applied_coupon->id ) ) 
-        {
-            if ( !empty( $post->post_excerpt ) ) 
-            {
-                ?>
-                <div class="applied_coupon" id='coupon_<?php echo $coupon->id; ?>'>
-                    <strong><?php echo  $applied_coupon->code; ?>: </strong>
-                        <?php echo $post->post_excerpt ; ?>
-                </div>
-                 <?php
-            }
-                                                    
-        }
+    foreach(WC()->cart->get_coupons() as $applied_coupon):  if ( $post = get_post( $applied_coupon->id ) ) {
+                        if ( !empty( $post->post_excerpt ) ) {
+                                                        ?>
+                            <div class="applied_coupon" id='coupon_<?php echo $coupon->id; ?>'>
+                                <div class="row">
+                                    
+                                    <div class="col-sm-1">
+                                    <i class="glyphicon glyphicon-ok-sign" style="color:#7ed321"></i>
+                                    
+                                    </div> 
+                                    <div class="col-sm-11">
+                                    <strong><?php echo  $applied_coupon->code; ?>: </strong><?php echo $post->post_excerpt ; ?>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                                                    <?php
+                                                    }}
                                                         
-    endforeach;
+                                                    endforeach;
+                                                   
            wp_die();                                         
 }
  
