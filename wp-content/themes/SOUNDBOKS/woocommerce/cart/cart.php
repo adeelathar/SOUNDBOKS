@@ -30,19 +30,20 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 
 ?>
-    
-    <table class="shop_table shop_table_responsive cart" cellspacing="0">
-        <thead>
-            <tr>
-                <th class="product-thumbnail">&nbsp;</th>
-                <th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-                <th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-                <th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-                <th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
-                <th class="product-remove">&nbsp;</th>
-                    
-            </tr>
-        </thead>
+    <div class="container">
+    <div id='cart_icons_row' class='row'>
+        <div class='col-sm-3 heading'><i class='glyphicon glyphicon-shopping-cart'></i> CART</div>
+        <div class='col-sm-3 '><i class="fa fa-undo" aria-hidden="true"></i> 30 DAYS RETURN</div>
+        <div class='col-sm-3 '><i class="fa fa-shield" aria-hidden="true"></i> 2 YEARS WARRANTY</div>
+        <div class='col-sm-3 '><i class="fa fa-plane" aria-hidden="true" style="float:left; line-height:23px" ></i> 
+            <div style="float:left; line-height:19px;">WORLDWIDE <br>INSTANT SHIPPING</div>
+        </div>
+    </div>
+    </div>
+    <div style="border:1px solid #ddd; width:100%;"></div>
+    <div class="container">
+         <table class="shop_table shop_table_responsive cart" cellspacing="0">
+     
         <tbody>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
                     
@@ -188,6 +189,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
         </tbody>
     </table>
+    </div>
+   
         
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
     

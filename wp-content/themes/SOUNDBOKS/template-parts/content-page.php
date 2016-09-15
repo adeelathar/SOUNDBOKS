@@ -8,10 +8,16 @@
  */
 
 ?>
-<div class="container">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php 
+                if(!is_cart())
+                {
+                    the_title( '<h1 class="entry-title">', '</h1>' ); 
+                }
+                
+                
+                ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -41,5 +47,4 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-## -->
-</div>
 
