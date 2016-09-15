@@ -40,7 +40,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         </div>
     </div>
     </div>
-    <div style="border:1px solid #ddd; width:100%;"></div>
+    <div style="border-top:1px solid #ddd; width:100%;"></div>
     <div class="container">
          <table class="shop_table shop_table_responsive cart" cellspacing="0">
      
@@ -98,7 +98,17 @@ do_action( 'woocommerce_before_cart' ); ?>
                 </td>
                     
                 <td class="product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
-						<?php
+                    <div class="qty_container">
+                        <div class=" arrow_up">
+                            <i class="fa fa-sort-up"></i>
+                        </div>
+                        
+                        <div class=" arrow_down">
+                            
+                            <i class="fa fa-sort-down"></i>
+                        </div>
+                        
+                        <?php
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 							} else {
@@ -112,6 +122,8 @@ do_action( 'woocommerce_before_cart' ); ?>
                                                             
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
 						?>
+                    </div>
+						
                 </td>
                     
                 <td class="product-subtotal" data-title="<?php _e( 'Total', 'woocommerce' ); ?>">
@@ -231,4 +243,26 @@ do_action( 'woocommerce_before_cart' ); ?>
         });
         return false;
     }
+    
+    jQuery('.arrow_down').on('click', function(){
+       var value = parseInt(jQuery(this).parent().find('input[type="number"]').val());
+      if(value>1)
+      {
+          value -=1;
+          
+      }
+      jQuery(this).parent().find('input[type="number"]').val(value);
+            jQuery(this).parent().find('input[type="number"]').trigger('change');
+
+    });
+    
+    jQuery('.arrow_up').on('click', function(){
+       var value = parseInt(jQuery(this).parent().find('input[type="number"]').val());
+     
+          value +=1;
+          
+     
+      jQuery(this).parent().find('input[type="number"]').val(value);
+      jQuery(this).parent().find('input[type="number"]').trigger('change');
+    });
 </script>
