@@ -14,7 +14,7 @@ body
   color: #000000;
 }
 
-*, body *, input
+*, body *, input, button
 {
     font-family:conduit;
 }
@@ -417,4 +417,90 @@ body
 .site-footer .logo
 {
     margin-bottom: 80px
+}
+
+.site-footer label
+{
+    margin:0px; margin-bottom:20px;
+    font-weight:bold;
+    color:#000;
+    font-size:16px;
+    width:100%;
+    clear:both;display:block;
+}
+
+
+.site-footer input[type='email']
+{
+  float:left;
+  border:1px solid rgba(151, 151, 151, 0.3);
+  background-color:#FFF;  width: 208px;
+  height: 60px;display:block; border-radius:1px;
+  padding-left:20px;
+  font-size:18px;
+  color:rgba(0,0,0, 0.8); outline:none; border-right:0px;
+  
+}
+
+.site-footer button[type=submit]
+{
+    width: 117px;
+  height: 60px;background:none;
+  background-color: #f47c60; 
+  border-radius:0px; box-shadow:none; font-size:18px; font-weight:bold; border:1px solid transparent;
+  color:#FFF;
+  text-transform:uppercase;
+    
+}
+
+.site-footer form
+{
+    margin-bottom:50px; display:block;
+
+}
+.site-footer #address, .site-footer .copyright
+{
+    font-size:12px;
+    color:rgba(0,0,0,0.7); margin-bottom:30px; line-height:20px;
+}
+.site-footer .copyright a 
+{
+    color:#f47c60;
+}
+
+.site-footer .right_col
+{
+    text-align:right;
+    
+}
+.site-footer .right_col .links 
+{
+    margin-bottom:87px;;
+}
+.site-footer .right_col .links li 
+{
+    list-style: none;
+    display:inline-block;
+}
+.site-footer .right_col .links a 
+{
+    font-size:16px; font-weight:bold;
+    color:#000;
+    line-height:34px;
+    display:inline-block;
+    padding-left:10px; padding-right:10px
+}
+
+.site-footer .right_col .social_icons
+{
+    margin-bottom:40px;
+}
+
+.site-footer .right_col .social_icons .icon
+{
+    width:40px; height:40px;
+    background-color:#000000;
+    color:#fff; text-align: center;
+    line-height:40px; border-radius:50%; margin-right:10px; margin-left:10px;
+    cursor:pointer;
 }
