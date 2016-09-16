@@ -160,11 +160,11 @@ function get_applied_coupons()  // this is the action data variable we set in aj
                             <div class="applied_coupon" id='coupon_<?php echo $coupon->id; ?>'>
                                 <div class="row">
                                     
-                                    <div class="col-sm-1">
+                                    <div class="col-xs-1">
                                     <i class="glyphicon glyphicon-ok-sign" style="color:#7ed321"></i>
                                     
                                     </div> 
-                                    <div class="col-sm-11">
+                                    <div class="col-xs-11">
                                     <strong><?php echo  $applied_coupon->code; ?>: </strong><?php echo $post->post_excerpt ; ?>
                                     </div>
                                 </div>
