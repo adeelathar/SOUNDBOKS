@@ -275,7 +275,12 @@ body
 {
     padding:0px !important;
 }
-
+.wc-proceed-to-checkout .tax_note
+{
+    color:#000000;
+    opacity:0.7;
+    font-size:12px; text-align:center;
+}
 #custom_update_btn 
 { padding:0px;
     border:0px; font-size:20px; font-weight:bold;
@@ -296,9 +301,27 @@ body
      width: 177px;
   height: 60px;
   border-radius: 100px;
-  background-color: #f47c60 !important;
+  background-color: #f47c60 !important; margin-bottom:10px !important;
 }
 
 .woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
     width: 35%;
+}
+.pay_as_little_text
+{
+    font-size:16px; color:#000000; width:174px; float:right;
+}
+.pay_as_little_text h3
+{
+    
+    color:#f47c60; font-weight:bold;font-size:16px; margin-bottom:5px;
+}
+.pay_as_little_text p 
+{
+    margin-bottom:5px;
+}
+.pay_as_little_text a 
+{
+    font-weight:bold;font-size:16px;color:#000000;
+    
 }

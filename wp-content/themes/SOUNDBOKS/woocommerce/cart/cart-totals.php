@@ -108,7 +108,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="col-sm-6">
                     <div class="wc-proceed-to-checkout">
                     <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+                        <div class="tax_note">INCl. 15% VAT 230,- DKK</div>
                     </div>
+                </div>
+                
+                <div class="pay_as_little_text">
+                    <h3>PAY AS LITTLE AS $25/MONTH</h3>
+                    <p>Apply & check out in seconds</p>
+                    <a href="#">Learn More</a>
                 </div>
                 
                 
