@@ -1,4 +1,5 @@
-<?php
+<div class="container">
+    <?php
 /**
  * Cross-sells
  *
@@ -42,22 +43,25 @@ $woocommerce_loop['columns'] = apply_filters( 'woocommerce_cross_sells_columns',
 
 if ( $products->have_posts() ) : ?>
 
-	<div class="cross-sells">
-
-		<h2><?php _e( 'You may be interested in&hellip;', 'woocommerce' ) ?></h2>
-
-		<?php woocommerce_product_loop_start(); ?>
+	<div class="cross-sells " id="cross-sells" style="width:100%; float:none;">
+            <div class="row">
+                <?php woocommerce_product_loop_start(); ?>
 
 			<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php wc_get_template_part( 'content', 'cart-product' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
 		<?php woocommerce_product_loop_end(); ?>
+            </div>
+
+		
 
 	</div>
 
 <?php endif;
 
 wp_reset_query();
+?>
+</div>

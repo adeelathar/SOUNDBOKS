@@ -126,3 +126,19 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
 </div>
+
+
+<div CLASS="seperator">
+    
+    <h3>YOU MIGHT ALSO BE INTERESTED IN...</h3>
+</div>
+<div id="related_products" class="container">
+    
+</div>
+
+<script>
+    jQuery(window).ready(function(){
+        jQuery('.cross-sells').appendTo('#related_products');
+    })
+    
+    </script>

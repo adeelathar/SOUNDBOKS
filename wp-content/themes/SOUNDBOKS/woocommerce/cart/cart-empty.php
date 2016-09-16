@@ -1,4 +1,4 @@
-<?php
+<div class="container"><?php
 /**
  * Empty cart page
  *
@@ -37,3 +37,4 @@ wc_print_notices();
 		</a>
 	</p>
 <?php endif; ?>
+</div>
