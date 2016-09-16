@@ -44,6 +44,7 @@ $woocommerce_loop['columns'] = apply_filters( 'woocommerce_cross_sells_columns',
 if ( $products->have_posts() ) : ?>
 
 	<div class="cross-sells " id="cross-sells" style="width:100%; float:none;">
+            
             <div class="row">
                 <?php woocommerce_product_loop_start(); ?>
 

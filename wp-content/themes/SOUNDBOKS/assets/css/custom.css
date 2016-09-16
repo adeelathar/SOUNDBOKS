@@ -373,3 +373,48 @@ body
     font-size:12px;
     color:#0074cb; font-weight:bold;
 }
+
+.woocommerce-error, .woocommerce-message
+{
+     height: 72.4px;
+  background-color: rgba(74, 143, 226, 1);
+  color:#FFF;
+  line-height:72.4px;
+  text-align:center;
+  border:0px; padding:0px !important; font-size:20px; text-transform:uppercase; font-weight:bold;
+  position:fixed; top:0px; width:100%;
+  z-index:1111111;
+}
+.woocommerce-error .cross, .woocommerce-message .cross
+{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#FFF;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+ .woocommerce-message a
+{
+    display:none;
+}
+
+
+.woocommerce-error:before, .woocommerce-message:before
+{
+    content:" " !important;
+}
+
+.site-footer
+{
+    border-top: 1px solid #d7d7d7;
+    width: 100%;
+    padding-top:90px;
+    
+}
+.site-footer .logo
+{
+    margin-bottom: 80px
+}

@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
     
-wc_print_notices();
+
     
 do_action( 'woocommerce_before_cart' ); ?>
     
@@ -233,7 +233,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
             
 </div>
+ <div CLASS="seperator">
     
+    <h3>YOU MIGHT ALSO BE INTERESTED IN...</h3>
+</div>
+<div id="related_products" class="container">
+    
+</div>   
 <?php do_action( 'woocommerce_after_cart' ); ?>
 <script>
     jQuery( document.body ).on( 'applied_coupon removed_coupon', function(e){
@@ -285,4 +291,32 @@ do_action( 'woocommerce_before_cart' ); ?>
       jQuery(this).parent().find('input[type="number"]').val(value);
       jQuery(this).parent().find('input[type="number"]').trigger('change');
     });
+    
+    
+    
+    jQuery(document).on('DOMNodeInserted', function(e) {
+    if (jQuery(e.target).is('.woocommerce-error') || jQuery(e.target).is('.woocommerce-message')) {
+      jQuery(e.target).prependTo('body');
+      var cross = jQuery('<div class="cross"><i class="fa fa-times" aria-hidden="true"></i></div>');
+     jQuery(e.target).find('.cross').remove();;
+      if(!jQuery(e.target).hasClass('cross'))
+      {
+          jQuery(e.target).append(cross);
+        cross.on('click', function(){
+          jQuery(this).closest('.woocommerce-error').remove();
+          jQuery(this).closest('.woocommerce-message').remove();
+          jQuery('body').css('padding-top', '0px');
+        });
+      }
+          
+      
+      jQuery('body').css('padding-top', '60px');
+    }
+    
+   
+});
+
+ jQuery(window).ready(function(){
+        jQuery('.cross-sells').appendTo('#related_products');
+    })
 </script>

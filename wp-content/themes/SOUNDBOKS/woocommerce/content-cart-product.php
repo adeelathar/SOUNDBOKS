@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php post_class('col-sm-12'); ?>> <?php 
+<li CLASS="col-sm-6"> <?php 
  $_pf = new WC_Product_Factory();  
      $_product = $_pf->get_product($product->id);
      

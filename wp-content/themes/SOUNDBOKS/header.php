@@ -20,6 +20,11 @@
     </head>
     
     <body <?php body_class(); ?>>
+
+      
+        <?php wc_print_notices(); 
+ //wc_print_notice('test', 'error');
+        ?>
         <div id="page" class="site">
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'soundboks' ); ?></a>
             
