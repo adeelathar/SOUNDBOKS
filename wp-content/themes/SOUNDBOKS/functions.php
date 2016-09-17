@@ -181,4 +181,5 @@ function get_applied_coupons()  // this is the action data variable we set in aj
 // in first parameter prefix function name with wp_ajax_ 
 // this action is required in order to recieve data sent from ajax 
 add_action('wp_ajax_get_applied_coupons', 'get_applied_coupons');
+add_action('wp_ajax_nopriv_get_applied_coupons', 'get_applied_coupons');
  
