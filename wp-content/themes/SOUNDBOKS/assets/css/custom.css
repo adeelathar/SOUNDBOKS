@@ -66,6 +66,7 @@ body
 .navbar-nav>li.cart_icon>a i
 {
     position: relative;
+    line-height:80px;
 }
 .navbar-nav>li.cart_icon>a i .circle
 {
@@ -75,9 +76,10 @@ body
     height: 8px;
     border-radius: 50%;
     background-color: #f47c60;
-    top: -2px;
+    top: 29px;
     left: 6px;
     position: absolute;
+
     
 }
 #cart_icons_row i, #cart_icons_row

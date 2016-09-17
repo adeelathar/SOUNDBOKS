@@ -319,7 +319,7 @@ do_action( 'woocommerce_before_cart' ); ?>
  jQuery(window).ready(function(){
         jQuery('.cross-sells').appendTo('#related_products');
         
-        if(jQuery('.woocommerce-message'))
+        if(jQuery('.woocommerce-message') && jQuery('.woocommerce-message').css('display'))
         {
             
               var cross = jQuery('<div class="cross"><i class="fa fa-times" aria-hidden="true"></i></div>');
