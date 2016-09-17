@@ -318,5 +318,23 @@ do_action( 'woocommerce_before_cart' ); ?>
 
  jQuery(window).ready(function(){
         jQuery('.cross-sells').appendTo('#related_products');
+        
+        if(jQuery('.woocommerce-message'))
+        {
+            
+              var cross = jQuery('<div class="cross"><i class="fa fa-times" aria-hidden="true"></i></div>');
+                jQuery('.woocommerce-message').find('.cross').remove();;
+                 if(!jQuery('.woocommerce-message').hasClass('cross'))
+                 {
+                     jQuery('.woocommerce-message').append(cross);
+                   cross.on('click', function(){
+                     jQuery(this).closest('.woocommerce-error').remove();
+                     jQuery(this).closest('.woocommerce-message').remove();
+                     jQuery('body').css('padding-top', '0px');
+                   });
+                 }
+                 
+                 jQuery('body').css('padding-top', '50px');
+        }
     })
 </script>

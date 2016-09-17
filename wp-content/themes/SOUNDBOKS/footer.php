@@ -72,7 +72,18 @@
 	</footer><!-- #colophon -->
         
         
-        
+        <footer id='subfooter'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-sm-12'>
+                        MADE WITH LOVE AND LOUD MUSIC IN COPENHAGEN
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
         
 	
 </div><!-- #page -->
