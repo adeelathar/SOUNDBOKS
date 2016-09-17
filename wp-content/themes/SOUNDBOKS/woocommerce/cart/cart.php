@@ -334,7 +334,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                    });
                  }
                  
-                 jQuery('body').css('padding-top', '50px');
+                 jQuery('body').css('padding-top', '60px');
         }
     })
 </script>
