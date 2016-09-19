@@ -1,11 +1,38 @@
 @font-face {
-    font-family: conduit;
+    font-family: ConduitITC-Light;
     src: url(../fonts/Conduit/conduit_itc_light1.ttf) ;
+}
+
+@font-face {font-family: "ConduitITC-Regular";
+    src: url("//db.onlinewebfonts.com/t/81e97fa7dc68602b8589d95161d1e00f.eot");
+    src: url("//db.onlinewebfonts.com/t/81e97fa7dc68602b8589d95161d1e00f.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/81e97fa7dc68602b8589d95161d1e00f.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/81e97fa7dc68602b8589d95161d1e00f.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/81e97fa7dc68602b8589d95161d1e00f.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/81e97fa7dc68602b8589d95161d1e00f.svg#ConduitITCW01-Regular") format("svg");
+}
+
+@font-face {font-family: "ConduitITC-Medium";
+    src: url("//db.onlinewebfonts.com/t/74b51267cfe7ff0cab99d506ca6b067c.eot");
+    src: url("//db.onlinewebfonts.com/t/74b51267cfe7ff0cab99d506ca6b067c.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/74b51267cfe7ff0cab99d506ca6b067c.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/74b51267cfe7ff0cab99d506ca6b067c.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/74b51267cfe7ff0cab99d506ca6b067c.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/74b51267cfe7ff0cab99d506ca6b067c.svg#ConduitITCW01-Medium") format("svg");
+}
+
+@font-face {font-family: "ConduitITC-Bold";
+    src: url("//db.onlinewebfonts.com/t/589dc5dbe01f7ed323ccab2fd9ec9fe0.eot");
+    src: url("//db.onlinewebfonts.com/t/589dc5dbe01f7ed323ccab2fd9ec9fe0.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/589dc5dbe01f7ed323ccab2fd9ec9fe0.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/589dc5dbe01f7ed323ccab2fd9ec9fe0.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/589dc5dbe01f7ed323ccab2fd9ec9fe0.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/589dc5dbe01f7ed323ccab2fd9ec9fe0.svg#ConduitITCW01-Bold") format("svg");
 }
 
 body
 {
-    font-family:conduit;
+    font-family:ConduitITC-Regular;
     font-size: 16px;
   font-weight: 300;
   font-style: normal;
@@ -14,10 +41,10 @@ body
   color: #000000;
 }
 
-*, body *, input, button
+/* *, body *, input, button
 {
-    font-family:conduit;
-}
+    font-family:ConduitITC-Light;
+} */
 
 .navbar-brand 
 {
@@ -50,7 +77,7 @@ body
     padding-top:0px;
     padding-bottom:0px;
     font-size:17.9px;
-    font-weight:bold;
+    font-family:ConduitITC-Bold;
     color:#000000;
 }
 
@@ -82,29 +109,42 @@ body
 
     
 }
-#cart_icons_row i, #cart_icons_row
+#cart_icons_row .cicon, #cart_icons_row
 {
     vertical-align: top; line-height:40px;
 }
 #cart_icons_row
 {
-    color:#b3b2b2;
-    font-size:18px;
-    padding-bottom:87px; font-weight:bold; 
+    color:#999999;
+    font-size:16px;
+	font-family:ConduitITC-Bold;
+    padding-bottom:70px;
     margin-top:30px;
     margin-bottom:15px;
 }
-#cart_icons_row i
+
+#cart_icons_row .col-sm-7 {float:right;}
+#cart_icons_row .col-sm-4 {width:33%;}
+#cart_icons_row .cicon
 {
-        display: inline-block;
+    background-repeat: no-repeat;
+    display: inline-block;
     margin-right: 20px;
     font-size: 30px;
     color:#b3b2b2;
+	height: 38px;
+    width: 47px;
 }
+#cart_icons_row .cicon.cartic {background-image: url("http://clients.echofreelance.com/SOUNDBOKS/wp-content/themes/SOUNDBOKS/assets/images/big-cart-icon.png");width: 48px; height:42px;}
+#cart_icons_row .cicon.return {background-image: url("http://clients.echofreelance.com/SOUNDBOKS/wp-content/themes/SOUNDBOKS/assets/images/return.png");width: 44px;}
+#cart_icons_row .cicon.warranty {background-image: url("http://clients.echofreelance.com/SOUNDBOKS/wp-content/themes/SOUNDBOKS/assets/images/Warranty.png");width: 32px;}
+#cart_icons_row .cicon.delivery {background-image: url("http://clients.echofreelance.com/SOUNDBOKS/wp-content/themes/SOUNDBOKS/assets/images/Delivery.png");float: left;width: 51px;}
+
+
 #cart_icons_row .heading
 {
     font-size: 40px;
-    font-weight: bold; color:#000;
+    font-family:ConduitITC-Bold; color:#000;
     text-transform: uppercase;
 }
 
@@ -129,9 +169,9 @@ body
 .woocommerce table.shop_table  .product-name a
 {
      color: #000000;
-    font-weight: bold;
+	 font-family: ConduitITC-Bold;
     text-decoration: none;
-    font-size:19px;
+    font-size:20px;
     margin-bottom:0px; display:block;
 }
 .woocommerce table.shop_table{
@@ -148,6 +188,7 @@ body
 .woocommerce .amount
 {
     font-size:20px;
+	font-family:ConduitITC-Medium;
 }
 
 .woocommerce table.shop_table a.remove
@@ -213,21 +254,20 @@ body
     width: 188px;
     height: 60px;
     line-height: 60px;
-    color: #dddddd;
+    color: #cecece;
     border-radius: 0px;
     float: left;
     margin: 0px;
     border-right: 0px;
     padding: 20px;
-    font-family: conduit;
     font-size: 20px;
-    font-weight: bold;
+    font-weight:normal;  font-family: ConduitITC-Bold;
 }
 
 #coupon_form input[type=submit]
 {
     border:1px solid #d8d8d8;
-        width: 188px;font-family: conduit;
+        width: 188px;font-weight:normal;  font-family: ConduitITC-Bold; background-color:#d8d8d8;
     height: 60px;
     color: #fff;
     border-radius: 0px;
@@ -261,11 +301,11 @@ body
 
 .woocommerce .cart_totals table.shop_table, .woocommerce .cart_totals table.shop_table td, .woocommerce .cart_totals table.shop_table th 
 {
-    border:0px; font-weight:bold; font-size:16px;
+    border:0px; font-weight:normal; font-size:17px; font-family: ConduitITC-Bold;
 }
 .woocommerce .cart_totals table.shop_table .amount
 {
-     font-size:16px;
+     font-size:17px; font-family: ConduitITC-Bold; font-weight:normal; 
 }
 
 .woocommerce .cart_totals table.shop_table td
@@ -280,12 +320,12 @@ body
 .wc-proceed-to-checkout .tax_note
 {
     color:#000000;
-    opacity:0.7;
+    opacity:0.3;
     font-size:12px; text-align:center;
 }
 #custom_update_btn 
 { padding:0px;
-    border:0px; font-size:20px; font-weight:bold;
+    border:0px; font-size:20px; font-weight:normal;  font-family: ConduitITC-Bold;
     height:60px; line-height:60px; 
 }
 #custom_update_btn:hover 
@@ -304,6 +344,7 @@ body
   height: 60px;
   border-radius: 100px;
   background-color: #f47c60 !important; margin-bottom:10px !important;
+  font-size:20px; font-weight:normal;  font-family: ConduitITC-Bold; text-transform: uppercase;
 }
 
 .woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
@@ -316,7 +357,7 @@ body
 .pay_as_little_text h3
 {
     
-    color:#f47c60; font-weight:bold;font-size:16px; margin-bottom:5px;
+    color:#f47c60; font-weight:normal;  font-family: ConduitITC-Bold; font-size:16px; margin-bottom:5px;
 }
 .pay_as_little_text p 
 {
@@ -324,7 +365,7 @@ body
 }
 .pay_as_little_text a 
 {
-    font-weight:bold;font-size:16px;color:#000000;
+    font-weight:normal;  font-family: ConduitITC-Bold; font-size:16px;color:#000000;
     
 }
 
@@ -338,7 +379,7 @@ body
 .seperator h3 
 {
     color:#000000;
-    font-weight:bold;
+    font-weight:normal;  font-family: ConduitITC-Bold;
     background-color:#FFF;
     width:400px;
     margin:auto; text-align:center;
@@ -355,14 +396,14 @@ body
 {
     font-size:20px;
     color:#000000;
-    font-weight:bold;
+    font-weight:normal;  font-family: ConduitITC-Bold;
     margin-bottom:10px; display:block;
 }
 
 .cross-sells .fade_text
 {
     font-size:16px;
-    color:rgba(0,0,0,0.3); font-weight:bold;
+    color:rgba(0,0,0,0.3); font-weight:normal;  font-family: ConduitITC-Bold;
     
 }
 .cross-sells .amount
@@ -373,7 +414,7 @@ body
 .cross-sells .read_more
 {
     font-size:12px;
-    color:#0074cb; font-weight:bold;
+    color:#0074cb; font-weight:normal;  font-family: ConduitITC-Bold;
 }
 
 .woocommerce-error, .woocommerce-message
@@ -424,9 +465,9 @@ body
 .site-footer label
 {
     margin:0px; margin-bottom:20px;
-    font-weight:bold;
+    font-weight:normal;  font-family: ConduitITC-Bold;
     color:#000;
-    font-size:16px;
+    font-size:17px;
     width:100%;
     clear:both;display:block;
 }
@@ -449,7 +490,7 @@ body
     width: 117px;
   height: 60px;background:none;
   background-color: #f47c60; 
-  border-radius:0px; box-shadow:none; font-size:18px; font-weight:bold; border:1px solid transparent;
+  border-radius:0px; box-shadow:none; font-size:18px; font-weight:normal;  font-family: ConduitITC-Bold; border:1px solid transparent;
   color:#FFF;
   text-transform:uppercase;
     
@@ -486,7 +527,7 @@ body
 }
 .site-footer .right_col .links a 
 {
-    font-size:16px; font-weight:bold;
+    font-size:17px; font-weight:normal;  font-family: ConduitITC-Bold;
     color:#000;
     line-height:34px;
     display:inline-block;
@@ -512,7 +553,7 @@ body
     color:rgba(0,0,0,0.3);
     background-color:rgba(0, 0, 0, 0.03);
     padding-top:30px; padding-bottom:30px; font-size: 20px;
-  font-weight: bold;
+  font-weight:normal;  font-family: ConduitITC-Bold;
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 2px;
