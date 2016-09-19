@@ -32,12 +32,17 @@ do_action( 'woocommerce_before_cart' ); ?>
 ?>
     <div class="container">
     <div id='cart_icons_row' class='row'>
-        <div class='col-sm-3 heading'><i class='glyphicon glyphicon-shopping-cart'></i> CART</div>
-        <div class='col-sm-3 '><i class="fa fa-undo" aria-hidden="true"></i> 30 DAYS RETURN</div>
-        <div class='col-sm-3 '><i class="fa fa-shield" aria-hidden="true"></i> 2 YEARS WARRANTY</div>
-        <div class='col-sm-3 '><i class="fa fa-plane" aria-hidden="true" style="float:left; line-height:23px" ></i> 
+        <div class='col-sm-3 heading'><span class="cicon cartic"></span> CART</div>
+		
+		<div class='col-sm-7'>
+        <div class='col-sm-4 '><span class="cicon return"></span> 30 DAYS RETURN</div>
+        <div class='col-sm-4 '><span class="cicon warranty"></span> 2 YEARS WARRANTY</div>
+        <div class='col-sm-4 '><span class="cicon delivery"></span> 
             <div style="float:left; line-height:19px;">WORLDWIDE <br>INSTANT SHIPPING</div>
         </div>
+		</div>
+		
+		
     </div>
     </div>
     <div style="border-top:1px solid #ddd; width:100%;"></div>
