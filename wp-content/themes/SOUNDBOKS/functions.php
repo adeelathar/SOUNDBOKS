@@ -102,20 +102,17 @@ add_action( 'widgets_init', 'soundboks_widgets_init' );
  * Enqueue scripts and styles.
  */
 function soundboks_scripts() {
-	wp_enqueue_style( 'style1', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
-        
-        wp_enqueue_style( 'style2', get_template_directory_uri() . '/assets/frameworks/bootstrap/css/bootstrap.min.css' );
-        	wp_enqueue_style( 'style3', get_stylesheet_uri() );
+wp_enqueue_style( 'style1', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
+wp_enqueue_style( 'style2', get_template_directory_uri() . '/assets/frameworks/bootstrap/css/bootstrap.min.css' );
+wp_enqueue_style( 'style3', get_stylesheet_uri() );
+wp_enqueue_style( 'style4', get_template_directory_uri() . '/assets/css/custom.css' );
+wp_enqueue_style( 'responsive', get_template_directory_uri() . '/layouts/responsive.css' );
 
-        wp_enqueue_style( 'style4', get_template_directory_uri() . '/assets/css/custom.css' );
+wp_enqueue_script( 'soundboks-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'soundboks-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-        
-        
-        wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/frameworks/bootstrap/js/bootstrap.min.js',array('jquery'),'', true);
-        
+wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/frameworks/bootstrap/js/bootstrap.min.js',array('jquery'),'', true);
 
-	wp_enqueue_script( 'soundboks-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+wp_enqueue_script( 'soundboks-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
