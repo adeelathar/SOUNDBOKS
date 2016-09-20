@@ -15,8 +15,9 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
-        
+
 <?php wp_head(); ?>
+     
     </head>
     
     <body <?php body_class(); ?>>
@@ -29,11 +30,11 @@
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'soundboks' ); ?></a>
             
             
-            <nav class="navbar  "  >
+            <nav class="navbar"  >
                 <div class="container">
                     
                     <div class='row'>
-                        <div class="col-sm-3">
+                        <div class="col-sm-12 col-md-3 phone-hide">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                                     <span class="sr-only">Toggle navigation</span>
@@ -46,15 +47,15 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-sm-9">
+                        <div class="col-sm-12 col-md-9">
                             <div class='row'>
-                                <div class="col-sm-4">
+                                <div class="col-sm-12 col-md-4 clearfix">
                                     <ul class="menu nav navbar-nav pull-right countries">
                                         <li><a href='#'>US</a></li>
                                         <li class='active'><a href='#'>EUROPE</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-sm-12 col-md-8 clearfix">
                                     <div id="navbar" class="navbar-collapse collapse">
                                         
                                                         <?php 
@@ -82,6 +83,8 @@
                     </div>
                 </div>
             </nav>
+            
+            <nav class="phone-show"><!--Navigation for phone goes here--></nav>
             
 
             <div id="content" class="site-content">
