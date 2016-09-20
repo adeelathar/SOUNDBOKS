@@ -109,4 +109,13 @@
 			}
 		}
 	}( container ) );
+
 } )();
+
+
+/**************close menu on browser popstate**********/
+
+window.onpopstate = function()
+{
+	document.getElementById('phonemenu').classList.remove('open');
+}
