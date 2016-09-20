@@ -34,9 +34,9 @@
                 <div class="container">
                     
                     <div class='row'>
-                        <div class="col-sm-12 col-md-3 phone-hide">
+                        <div class="col-sm-12 col-md-3">
                             <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <button type="button" class="navbar-toggle" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="document.getElementById('phonemenu').classList.add('open');">
                                     <span class="sr-only">Toggle navigation</span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -47,7 +47,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-9">
+                        <div class="col-sm-12 col-md-9 phone-hide">
                             <div class='row'>
                                 <div class="col-sm-12 col-md-4 clearfix">
                                     <ul class="menu nav navbar-nav pull-right countries">
@@ -84,7 +84,17 @@
                 </div>
             </nav>
             
-            <nav class="phone-show"><!--Navigation for phone goes here--></nav>
+            <nav id="phonemenu" class="phone-show">
+
+                <div id="phonemenuslide">
+                    <div><a id="close-phone-menu" href="#" onclick="document.getElementById('phonemenu').classList.remove('open')"></a> </div>
+                    <div class="clearfix"></div>
+                    <?php
+                    wp_nav_menu( array( 'menu_class'      => 'menu phone nav navbar-nav','theme_location' => 'primary', 'menu_id' => 'site-mobile-navigation') ); ?>
+
+                </div>
+
+            </nav>
             
 
             <div id="content" class="site-content">

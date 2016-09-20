@@ -103,7 +103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </table>
                 
                 <div class="col-sm-6">
-                    <div class="btn btn-default btn-block btn-lg" id="custom_update_btn" onclick="jQuery('#update_cart_button').trigger('click');"><i class="glyphicon glyphicon-refresh"></i>UPDATE CART</div>
+                    <div class="btn btn-default btn-block btn-lg" id="custom_update_btn" onclick="document.getElementById('update_cart_button').removeAttribute('disabled'); document.getElementById('update_cart_button').click();"><i class="glyphicon glyphicon-refresh"></i>UPDATE CART</div>
                 </div>
                 <div class="col-sm-6">
                     <div class="wc-proceed-to-checkout">

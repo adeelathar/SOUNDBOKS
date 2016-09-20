@@ -1,4 +1,8 @@
-/* Bilal Work */
+@media (min-width: 641px)
+{
+	#content.site-content {padding-top:0px!Important;}
+}
+
 @media (max-width: 991px)
 {
     .woocommerce .cart-collaterals .cart_totals {width:100%}
@@ -100,8 +104,42 @@
     background-color: #333333;
 }
 .navbar-toggle {
-    margin-top: 20px;
+    margin-top: 14px;
+	float: left;
+	box-shadow: none;
 }
+.navbar-toggle .icon-bar {
+    width: 17px;
+}
+.navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 3px;
+}
+
+.navbar{border-bottom:1px solid #ddd; margin-top:0px!Important;}
+.navbar-brand > img {
+    width: 120px;
+	display: inline;
+}
+.navbar-brand {
+    height: 59px;
+	text-align:center;
+	width: 67%;
+}
+.copyright div {display:none;}
+
+.site-footer .right_col .social_icons {border:none!Important;}
+.site-footer .right_col {
+    text-align: center;
+}
+.site-footer {border-top:none;}
+.site-footer .right_col .links a {font-size:14px;}
+.site-footer .right_col .links li + li:before {content: " | ";}
+#colophon.site-footer {background-color:#F5F5F5; padding-bottom:20px;}
+#subfooter {background-color:white; margin-top:0;}
+.woocommerce-error, .woocommerce-message {top:61px;}
+
+
+
 .navbar-nav > li.cart_icon > a i {
     line-height: 30px;
     position: relative;
@@ -234,11 +272,120 @@
     font-size: 30px;
 }
 
+/*}
+
+@media (max-width: 480px) { */
+	
+.woocommerce-error, .woocommerce-message {
+    font-size: 15px;
+    font-weight: normal;
+    padding: 0 0 0 11px !important;
+    text-align: left;
+	position:absolute!Important;
 }
 
-@media (max-width: 480px) {
+body {
+    font-size: 13px;
+}
+
+.woocommerce table.shop_table .product-name a { font-size:18px; margin-bottom: 9px;}
+
+.woocommerce table.shop_table_responsive tr td::before, .woocommerce-page table.shop_table_responsive tr td::before {
+    content: none;
+}
+.woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td {
+    text-align: left !important;
+}
+.woocommerce table.shop_table td {
+    padding: 15px 5px;
+}
+.woocommerce table.shop_table .qty_container {
+    float: none;
+}
+
+.woocommerce table.shop_table .qty_container .arrow_up, .woocommerce table.shop_table .qty_container .arrow_down {
+    top: 11px;
+}
+
+table.shop_table .qty_container .arrow_up i, table.shop_table .qty_container .arrow_down i {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+table.shop_table .qty_container .arrow_down {
+    left: -39px !important;
+    top: -20px !important;
+}
+
+table.shop_table .qty_container .arrow_up {
+    left: 12px !important;
+}
+.woocommerce table.shop_table input.qty {
+    background-color: #f9f9f9;
+}
+
+.woocommerce table.shop_table_responsive tr td .product-remove {
+    right: -12px;
+    top: 19px;
+}
+
+#cart_icons_row .heading {
+    font-size: 24px;
+}
+
+#cart_icons_row .cicon.cartic {
+    background-size: 36px 32px;
+    height: 32px;
+    width: 36px;
+}
+
+#cart_icons_row {
+    margin-top: 7px;
+    padding-bottom: 15px;
+}
+
+.woocommerce .product-price .amount {
+    font-family: ConduitITC-Regular;
+    font-size: 17px;
+}
+.woocommerce .product-price {width:27%;}
+
+.woocommerce .product-subtotal .amount {
+    font-family: ConduitITC-Bold;
+    font-size: 17px;
+}
+
+.woocommerce table.shop_table_responsive tr td.product-subtotal::before, .woocommerce table.shop_table_responsive tr.cart-subtotal td::before, .woocommerce table.shop_table_responsive tr.order-total td::before {
+    content: attr(data-title) "\00a0 ";
+    float: left;
+    font-family: ConduitITC-Bold;
+	font-size: 17px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.woocommerce table.shop_table td.product-name, .woocommerce table.shop_table td.product-thumbnail {
+    padding-top: 33px;
+}
+.woocommerce table.shop_table {
+    margin-top: 0;
+}
+#related_products.container, .woocommerce .seperator, .site-footer .container .row .col-sm-6:first-child{display:none;}
+#applied_coupons {
+    margin-bottom: 32px;
+    margin-top: 26px;
+    width: 289px;
+	font-size: 14px;
+}
+#applied_coupons .row .col-xs-11{
+    padding-right: 0;
+    width: 86%;
+}
+
+
 
 }
+
 
 @media (max-width: 320px) {
 .site-footer input[type="email"] {
