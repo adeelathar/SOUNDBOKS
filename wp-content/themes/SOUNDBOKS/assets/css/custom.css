@@ -497,7 +497,7 @@ body
   text-align:center;
   border:0px; padding:0px !important; font-size:20px; text-transform:uppercase; font-weight:bold;
   position:fixed; top:0px; width:100%;
-  z-index:1111111;
+  z-index:10;
 }
 .woocommerce-error .cross, .woocommerce-message .cross
 {
