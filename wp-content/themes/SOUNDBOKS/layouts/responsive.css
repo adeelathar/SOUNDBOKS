@@ -2,6 +2,10 @@
 {
 	#content.site-content {padding-top:0px!Important;}
 }
+@media (min-width: 992px)
+{
+	.cart-collaterals .container .row .col-sm-12{margin-top: -117px !important}
+}
 
 @media (max-width: 991px)
 {
